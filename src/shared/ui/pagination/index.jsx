@@ -39,7 +39,7 @@ export const Pagination = () => {
   }, []);
 
   if (!totalCount) return null;
-
+console.log('')
   return (
     <div className={styles.wrapper}>
       <div className={styles.perPage}>
