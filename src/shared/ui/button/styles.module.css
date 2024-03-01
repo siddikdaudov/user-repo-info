@@ -1,0 +1,11 @@
+@import url("../../css-variables.css");
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background-color: var(--main-blue);
+  padding: 14px 12px;
+}

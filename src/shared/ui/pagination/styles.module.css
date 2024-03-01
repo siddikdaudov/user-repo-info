@@ -1,0 +1,103 @@
+@import url("../../../shared/css-variables.css");
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 30px;
+  padding: 0 40px;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.perPage {
+  max-width: 71px;
+  min-width: 71px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  justify-content: center;
+  border: 1px solid #a2a3a4;
+  position: relative;
+}
+
+.perPage button {
+  transform: translateY(3px);
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.popover {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  max-width: 71px;
+  min-width: 71px;
+  top: -90px;
+  border: 1px solid #a2a3a4;
+  background-color: white;
+  padding: 5px 0 8px 0;
+}
+
+.popover button {
+  font-size: 16px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  list-style-type: none;
+  font-size: 16px;
+}
+
+.pagination li:first-child,
+.pagination li:last-child {
+  border: none;
+  background: url("./assets/arrow.png") 0 0 / contain no-repeat;
+}
+
+.pagination li:nth-child(2) {
+  border-left: none;
+}
+
+.pagination li:last-child {
+  transform: scaleX(-1);
+}
+
+.pagination li {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #a2a3a4;
+  border-right: none;
+}
+
+.pagination li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.active {
+  background-color: var(--main-blue);
+  color: white;
+}
+
+@media screen and (max-width: 769px) {
+  .perPage {
+    margin: 0 auto 20px auto;
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
