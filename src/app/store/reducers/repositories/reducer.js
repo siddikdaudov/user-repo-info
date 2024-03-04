@@ -1,4 +1,9 @@
-import { GET_REPOSITORIES_FULFILLED, GET_REPOSITORIES_PENDING, GET_REPOSITORIES_REJECTED } from "./action-types";
+import {
+  GET_REPOSITORIES_FULFILLED,
+  GET_REPOSITORIES_PENDING,
+  GET_REPOSITORIES_REJECTED,
+  DELETE_REPOSITORY_FULFILLED,
+} from "./action-types";
 
 const INITIAL_STATE = {
   repositories: [],
@@ -31,6 +36,16 @@ export const repositories = (state = INITIAL_STATE, action) => {
         ...state,
         isLoading: false,
         error: action.payload,
+      };
+
+    // DELETE
+    case DELETE_REPOSITORY_FULFILLED:
+      return {
+        ...state,
+        repositories: state.repositories.filter((repository) => repository.id !== action.payload),
+        isLoading: false,
+        error: null,
+        totalCount: state.totalCount - 1,
       };
 
     default:

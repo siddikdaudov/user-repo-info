@@ -3,6 +3,7 @@
   padding: 32px 40px 47px 40px;
   position: sticky;
   top: 0px;
+  z-index: 1;
 }
 
 .search {

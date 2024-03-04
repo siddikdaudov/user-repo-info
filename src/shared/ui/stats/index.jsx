@@ -1,6 +1,6 @@
-import styles from "./styles.module.css";
 import star from "../../assets/star.png";
 import eye from "../../assets/eye.png";
+import styles from "./styles.module.css";
 
 export const Stats = ({ stars, watchers }) => {
   return (

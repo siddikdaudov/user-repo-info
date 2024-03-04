@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
+import { useDispatch, useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 import { getRepositoriesThunk } from "../../../app/store/reducers/repositories/thunks";
 import styles from "./styles.module.css";
 
@@ -24,6 +24,13 @@ export const Pagination = () => {
   };
 
   const handlePerPage = (value) => {
+    const isCurrentPerPage = value === Number(searchParams.get("per_page"));
+
+    if (isCurrentPerPage) {
+      setOpen(false);
+      return;
+    }
+
     searchParams.set("per_page", value);
     setSearchParams(searchParams.toString());
     setOpen(false);
@@ -36,6 +43,7 @@ export const Pagination = () => {
     searchParams.set("page", searchParams.get("page") ?? 1);
 
     setSearchParams(searchParams.toString());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!totalCount) return null;

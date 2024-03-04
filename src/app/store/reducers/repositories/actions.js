@@ -1,4 +1,9 @@
-import { GET_REPOSITORIES_FULFILLED, GET_REPOSITORIES_PENDING, GET_REPOSITORIES_REJECTED } from "./action-types";
+import {
+  GET_REPOSITORIES_FULFILLED,
+  GET_REPOSITORIES_PENDING,
+  GET_REPOSITORIES_REJECTED,
+  DELETE_REPOSITORY_FULFILLED,
+} from "./action-types";
 
 // GET
 export const getRepositoriesFulfilled = (payload) => ({
@@ -12,5 +17,11 @@ export const getRepositoriesPending = () => ({
 
 export const getRepositoriesRejected = (payload) => ({
   type: GET_REPOSITORIES_REJECTED,
+  payload,
+});
+
+// DELETE
+export const deleteRepository = (payload) => ({
+  type: DELETE_REPOSITORY_FULFILLED,
   payload,
 });

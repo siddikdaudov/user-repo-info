@@ -4,7 +4,9 @@ export const Author = ({ photo, name, githubUrl }) => {
   return (
     <div className={styles.author}>
       <img src={photo} alt="User Photo" />
-      <button onClick={() => window.open(githubUrl, "_blank")}>{name}</button>
+      <a href={githubUrl} target="_blank">
+        {name}
+      </a>
     </div>
   );
 };

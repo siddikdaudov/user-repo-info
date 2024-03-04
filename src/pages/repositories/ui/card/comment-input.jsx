@@ -1,5 +1,5 @@
 import { Input, Button } from "../../../../shared";
-import pen from "../../assets/pen.png";
+import pen from "../../../../shared/assets/pen.png";
 import styles from "./styles.module.css";
 
 export const CommentInput = () => {
