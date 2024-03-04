@@ -5,7 +5,7 @@ import { RepositoryPage } from "../pages/repository";
 
 export const router = createBrowserRouter([
   { path: ROUTES.root, element: <Navigate to={ROUTES.repositoriesPage} replace /> },
-  // { path: "*", element: <Navigate to={ROUTES.root} /> },
+  { path: "*", element: <Navigate to={ROUTES.root} replace /> },
   { path: ROUTES.repositoriesPage, element: <RepositoriesPage /> },
   { path: `${ROUTES.repositoriesPage}/:user/:repository`, element: <RepositoryPage /> },
 ]);
